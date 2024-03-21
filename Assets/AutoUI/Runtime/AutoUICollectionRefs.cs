@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Common.AutoUI.Runtime
 {
@@ -15,28 +16,21 @@ namespace Common.AutoUI.Runtime
 
         public string GetArrayElementAutoNodeUIReference() 
             => "ArrayElementAutoNode";
+
+        private Dictionary<Type, string> m_PrimitiveTypeToAssetKey = new Dictionary<Type, string>()
+        {
+            {typeof(bool), "BooleanAutoNodeView" },
+            {typeof(string), "StringAutoInputField" },
+            {typeof(int), "IntAutoInputField" },
+            {typeof(float), "FloatAutoInputField" }
+        };
         
         
         public string GetAssetKeyForType(Type fieldType)
         {
-            if (fieldType == typeof(bool))
+            if (m_PrimitiveTypeToAssetKey.ContainsKey(fieldType))
             {
-                return "BooleanAutoNodeView";
-            }
-            
-            if (fieldType == typeof(string))
-            {
-                return "StringAutoInputField";
-            }
-            
-            if (fieldType == typeof(int))
-            {
-                return "IntAutoInputField";
-            }
-            
-            if (fieldType == typeof(float))
-            {
-                return "FloatAutoInputField";
+                return m_PrimitiveTypeToAssetKey[fieldType];
             }
 
             if (fieldType.IsEnum)
