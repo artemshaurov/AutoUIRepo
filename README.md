@@ -10,3 +10,6 @@
 ## ToDo 
 - Адаптивная верстка;
 - Обработка рекурсии;
+
+
+![AutoUI-inspector](https://github.com/artemshaurov/AutoUIRepo/assets/109016572/f42a901a-e5eb-4ac9-ae6d-972b81150bdb) => ![AutoUI-ui](https://github.com/artemshaurov/AutoUIRepo/assets/109016572/f1acec0e-a9e1-4a5d-be22-3c223c4eea3b)
